@@ -7,5 +7,6 @@ const {
 
 router.post("/contactdata/add", createContactData);
 router.get("/contactdata/get", getContactData);
+router.get("/contactdata/get_duplicate", getContactData);
 
 module.exports = router;

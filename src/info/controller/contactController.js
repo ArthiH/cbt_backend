@@ -9,6 +9,15 @@ const createContactData = async (req, res) => {
     res.status(500).json({ error: "Failed to create contact" });
   }
 };
+const getData = async (req, res) => {
+  try {
+    const contact = await contactModel.find();
+
+    res.send(contact);
+  } catch (error) {
+    res.status(500).json({ error: "Failed to create contact" });
+  }
+};
 
 const getContactData = async (req, res) => {
   try {
@@ -19,4 +28,4 @@ const getContactData = async (req, res) => {
   }
 };
 
-module.exports = { createContactData, getContactData };
+module.exports = { createContactData, getContactData,getData };
